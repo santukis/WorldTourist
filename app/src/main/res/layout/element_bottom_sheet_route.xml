@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/bottom_sheet_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:weightSum="1"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="100dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignBottom="@+id/button_remove"
+            android:layout_toStartOf="@+id/button_remove"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textSize="@dimen/text_title"
+            tools:text="Ernesto Winter Blanco (escultura) bla bla bla" />
+
+        <Button
+            android:id="@+id/button_remove"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/text_margin"
+            android:background="@android:drawable/ic_delete"/>
+
+        <ImageView
+            android:id="@+id/icon_mode"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_below="@+id/item_name"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            tools:src="@drawable/ic_driving" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_name"
+            android:layout_toEndOf="@+id/icon_mode"
+            android:layout_alignTop="@+id/icon_mode"
+            android:layout_alignBottom="@+id/icon_mode"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_title"
+            tools:text="3.4 km" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_name"
+            android:layout_toEndOf="@+id/distance"
+            android:layout_alignTop="@+id/icon_mode"
+            android:layout_alignBottom="@+id/icon_mode"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_title"
+            tools:text="(15 min)" />
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/activity_horizontal_margin">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

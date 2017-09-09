@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:seekbar="com.david.worldtourist.seekbar">
+
+    <PreferenceCategory
+        android:title="@string/prf_tour"/>
+
+    <com.david.worldtourist.preferences.presentation.component.SeekBarPreference
+        android:key="@string/prf_livetour_seekbar"
+        android:title="@string/prf_distance"
+        android:icon="@drawable/ic_distance"
+        android:persistent="true"
+        seekbar:minValue="50"
+        seekbar:maxValue="4000" />
+
+    <PreferenceCategory
+        android:title="@string/prf_event"/>
+
+    <com.david.worldtourist.preferences.presentation.component.SeekBarPreference
+        android:key="@string/prf_event_seekbar"
+        android:title="@string/prf_distance"
+        android:icon="@drawable/ic_distance"
+        android:persistent="true"
+        seekbar:minValue="10000"
+        seekbar:maxValue="1000000" />
+
+    <PreferenceCategory
+        android:title="@string/prf_events_and_visits"/>
+
+    <MultiSelectListPreference
+        android:key="@string/prf_item_type_multiselect"
+        android:title="@string/prf_site_type"
+        android:icon="@mipmap/ic_site_type"
+        android:persistent="true"
+        android:entries="@array/site_type_entries"
+        android:entryValues="@array/site_type_values"
+        android:defaultValue="@array/site_type_values"/>
+
+</PreferenceScreen>

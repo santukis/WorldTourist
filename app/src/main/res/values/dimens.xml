@@ -1,0 +1,53 @@
+<resources>
+    <!-- Padding and Margins -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="rating_bar_vertical_margin">20dp</dimen>
+
+    <dimen name="text_padding">5dp</dimen>
+    <dimen name="text_margin">8dp</dimen>
+
+    <dimen name="cardview_padding">8dp</dimen>
+    <dimen name="cardview_margin">2dp</dimen>
+
+    <dimen name="preference_padding">8dp</dimen>
+
+    <dimen name="splash_vertical_margin">72dp</dimen>
+
+    <dimen name="inter_dot_margin">5dp</dimen>
+
+    <dimen name="radar_padding">5dp</dimen>
+
+    <dimen name="report_padding">30dp</dimen>
+
+    <!-- Text size -->
+    <dimen name="text_header">16sp</dimen>
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_tiny">12sp</dimen>
+    <dimen name="text_rating_big">30sp</dimen>
+
+    <!-- Image -->
+    <dimen name="image_size">200dp</dimen>
+    <dimen name="site_image_size">120dp</dimen>
+    <dimen name="icon_size">32dp</dimen>
+
+    <!-- CardView -->
+    <dimen name="cardview_radius">8dp</dimen>
+
+    <!-- Navigation View -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button">40dp</dimen>
+    <dimen name="button_elevation">8dp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="toolbar_height">60dp</dimen>
+
+    <!-- Radar -->
+    <dimen name="radar_radius">55dp</dimen>
+    <dimen name="ar_point_radius">3dp</dimen>
+
+</resources>

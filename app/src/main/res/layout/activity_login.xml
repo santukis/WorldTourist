@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/login_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="@dimen/text_padding"
+    tools:resources=".login.presentation.activity.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_above="@+id/tv_register"
+        android:gravity="center"
+        android:textColor="@color/colorTextAccent"
+        android:textSize="30sp"
+        android:text="@string/login_welcome_message" />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/colorTextAccent"
+        android:textSize="@dimen/text_title"
+        android:text="@string/login_register_message" />
+
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_register"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnGoogle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/button_google"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:id="@+id/btnFacebook"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/button_facebook"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:id="@+id/btnTwitter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button_twitter"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/not_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/text_margin"
+        android:drawableEnd="@drawable/ic_next"
+        android:drawablePadding="@dimen/text_margin"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorTextAccent"
+        android:textStyle="bold"
+        android:text="@string/login_later"/>
+
+    <include layout="@layout/element_progress_bar"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

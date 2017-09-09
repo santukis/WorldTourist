@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/item_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_virtual_map"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData"
+        android:text="@string/item_map" />
+
+    <TextView
+        android:id="@+id/item_timetable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_item_timetable"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData"
+        tools:text="Horario"/>
+
+
+    <TextView
+        android:id="@+id/item_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_item_date"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData"
+        tools:text="dd/mm/yyyy - dd/mm/yyyy" />
+
+    <TextView
+        android:id="@+id/item_horary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_item_time"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData"
+        tools:text="Lunes: 10:00h - 20:00h" />
+
+    <TextView
+        android:id="@+id/item_ticket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_item_ticket"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData"
+        tools:text="desde 25 Euros" />
+
+
+    <TextView
+        android:id="@+id/item_telephone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_item_phone"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData"
+        tools:text="999 999 999" />
+
+    <TextView
+        android:id="@+id/item_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_item_about"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData"
+        android:text="@string/event_info" />
+
+    <TextView
+        android:id="@+id/item_panoramic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_item_street_view"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        android:text="@string/panoramic_view"
+        style="@style/AppTheme.ItemData" />
+
+    <TextView
+        android:id="@+id/item_add_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_add"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:text="@string/add_to_user_list"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData" />
+
+    <TextView
+        android:id="@+id/item_add_photos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_item_add_photo"
+        android:drawablePadding="@dimen/activity_horizontal_margin"
+        android:text="@string/add_photos"
+        android:gravity="center_vertical"
+        android:background="@drawable/button_background"
+        style="@style/AppTheme.ItemData"/>
+
+</LinearLayout>

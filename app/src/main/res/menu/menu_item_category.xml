@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/events"
+        android:title="@string/menu_events"
+        android:visible="true"
+        android:orderInCategory="1"/>
+    <item
+        android:id="@+id/sites"
+        android:title="@string/menu_sites"
+        android:visible="true"
+        android:orderInCategory="2"/>
+
+</menu>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="site_type_entries">
+        <item>@string/culture</item>
+        <item>@string/nature</item>
+        <item>@string/entertainment</item>
+        <item>@string/gastronomy</item>
+    </string-array>
+    <string-array name="site_type_values">
+        <item>CULTURE</item>
+        <item>NATURE</item>
+        <item>ENTERTAINMENT</item>
+        <item>GASTRONOMY</item>
+    </string-array>
+    <string-array name="list_types">
+        <item>@string/menu_favourite_items</item>
+        <item>@string/menu_items_to_visit</item>
+    </string-array>
+</resources>

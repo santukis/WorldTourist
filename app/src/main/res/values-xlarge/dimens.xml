@@ -1,0 +1,38 @@
+<resources>
+    <!-- Padding and Margins -->
+    <dimen name="activity_horizontal_margin">32dp</dimen>
+    <dimen name="activity_vertical_margin">32dp</dimen>
+
+    <dimen name="text_padding">15dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="rating_bar_vertical_margin">40dp</dimen>
+
+    <dimen name="cardview_padding">16dp</dimen>
+    <dimen name="cardview_margin">8dp</dimen>
+
+    <dimen name="preference_padding">16dp</dimen>
+
+
+    <!-- Text size -->
+    <dimen name="text_header">24sp</dimen>
+    <dimen name="text_title">32sp</dimen>
+    <dimen name="text_rating_big">45sp</dimen>
+
+    <!-- Image -->
+    <dimen name="image_size">400dp</dimen>
+    <dimen name="site_image_size">200dp</dimen>
+    <dimen name="icon_size">48dp</dimen>
+
+    <!-- CardView -->
+    <dimen name="cardview_radius">8dp</dimen>
+
+    <!-- Navigation View -->
+    <dimen name="nav_header_vertical_spacing">24dp</dimen>
+    <dimen name="nav_header_height">240dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button">40dp</dimen>
+    <dimen name="button_elevation">8dp</dimen>
+
+</resources>

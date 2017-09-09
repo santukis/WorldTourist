@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radio_group"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="@string/report_title"
+        android:textSize="@dimen/text_title" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin">
+
+        <RadioButton
+            android:id="@+id/radio_spam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:padding="@dimen/text_margin"
+            android:text="@string/report_spam" />
+
+        <RadioButton
+            android:id="@+id/radio_violent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:padding="@dimen/text_margin"
+            android:text="@string/report_violent" />
+
+        <RadioButton
+            android:id="@+id/radio_hate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:padding="@dimen/text_margin"
+            android:text="@string/report_hate" />
+
+        <RadioButton
+            android:id="@+id/radio_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:padding="@dimen/text_margin"
+            android:text="@string/report_wrong_content" />
+
+        <RadioButton
+            android:id="@+id/radio_something_else"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:padding="@dimen/text_margin"
+            android:text="@string/report_something_else" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/text_margin"
+        android:drawableEnd="@android:drawable/ic_menu_send"
+        android:drawablePadding="@dimen/text_margin"
+        android:enabled="false"
+        android:gravity="center_vertical|end"
+        android:text="@string/send_to"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

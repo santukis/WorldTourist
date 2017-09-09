@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ArLocation</string>
+
+    <string name="sensor_not_available">Tu dispositivo no tiene los sensores necesarios para utilizar esta función</string>
+
+</resources>

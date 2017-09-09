@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/user_signing"
+            android:icon="@drawable/ic_user_registration"
+            android:title="@string/menu_signing" />
+    </group>
+    <item android:title="@string/turism">
+        <menu>
+            <item
+                android:id="@+id/events"
+                android:icon="@drawable/ic_events"
+                android:title="@string/menu_events" />
+            <item
+                android:id="@+id/sites"
+                android:icon="@drawable/ic_live_tour"
+                android:title="@string/menu_sites" />
+            <item
+                android:id="@+id/virtual_tour"
+                android:icon="@drawable/ic_virtual_map"
+                android:title="@string/virtual_tour" />
+            <item
+                android:id="@+id/user_sites"
+                android:icon="@drawable/ic_bookmark_full"
+                android:title="@string/menu_my_sites" />
+            <item
+                android:id="@+id/user_events"
+                android:icon="@drawable/ic_wish_full"
+                android:title="@string/menu_my_events" />
+            <item
+                android:id="@+id/ar_geolocation"
+                android:icon="@drawable/ic_ar_location"
+                android:title="@string/menu_ar_geolocation"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/menu_configuration">
+        <menu>
+            <item
+                android:id="@+id/preferences"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/menu_preferences" />
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/ic_item_about"
+                android:title="@string/menu_about" />
+        </menu>
+    </item>
+</menu>

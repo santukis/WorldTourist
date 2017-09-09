@@ -1,0 +1,165 @@
+<resources>
+    <string name="app_name">World Tourist</string>
+    <string name="virtual_tour">Mapa</string>
+    <string name="turism">Turismo</string>
+    <string name="report">Informar de uso inadecuado</string>
+    <string name="empty"></string>
+
+    <!-- TYPES OF SITE -->
+    <string name="culture">Cultura</string>
+    <string name="nature">Naturaleza</string>
+    <string name="entertainment">Entretenimiento</string>
+    <string name="gastronomy">Gastronomía</string>
+
+    <!-- GENERAL -->
+    <string name="loading">Cargando&#8230;</string>
+    <string name="about_message">Esta aplicación ha sido realizada por David Santamaría Álvarez
+        como Proyecto final del <b>Diploma de Especialización en Desarrollo de Aplicaciones para Android</b>
+        de la Universidad Politécnica de Valencia.</string>
+
+    <!-- LOGIN -->
+    <string name="unregistered_user">Usuario sin registrar</string>
+    <string name="user_state">Me encanta World Tourist</string>
+    <string name="login_welcome_message">Bienvenido a\nWorld Tourist</string>
+    <string name="login_register_message">Puesdes registrarte ahora con&#58;</string>
+    <string name="login_later">Más tarde</string>
+    <string name="login_error">Error al iniciar la sesión con %s</string>
+
+    <!-- DETAIL -->
+    <string name="tv_description">Descripción</string>
+    <string name="source">Fuente:</string>
+    <string name="add_message">Añadir %s a&#058;</string>
+    <string name="add_to_user_list">Añade este %s a mis listas</string>
+    <string name="panoramic_view">&#191;Quieres ver una vista panorámica de este sitio&#63;</string>
+    <string name="item_text">He visto en <b>World Tourist</b> este %s que te podría gustar&#58;</string>
+    <string name="item_horary">Horario</string>
+    <string name="item_map">&#191;Quieres ver en el mapa dónde esta este sitio&#63;</string>
+    <string name="from">desde</string>
+    <string name="to">hasta</string>
+    <string name="add_photos">Añadir fotos</string>
+    <string name="no_calls_phone">Lo sentimos pero este dispositivo no puede hacer llamadas</string>
+
+
+    <!-- MY_SITES -->
+    <string name="my">Mis</string>
+    <string name="no_my_sites">No %s</string>
+    <string name="deleted_item">Eliminado correctamente</string>
+
+
+    <!-- EVENTS -->
+    <string name="no_closest_events">Lo sentimos, pero no hay ningún evento programado para los próximos días</string>
+    <string name="no_more_items">Has alcanzado el final, no hay nada más que mostrar</string>
+
+    <!-- MAPS -->
+    <string name="route_error">Lo sentimos, pero no hemos podido encontrar ninguna ruta válida</string>
+    <string name="address_error">Lo sentimos, pero no hemos encontrado ningún sitio con ese nombre</string>
+    <string name="address_search">&#191;Qué ciudad o localidad te gustaría conocer&#63;</string>
+
+    <!-- MESSAGES -->
+    <string name="comments">Reseñas</string>
+    <string name="minutes">m</string>
+    <string name="day">d</string>
+    <string name="hour">h</string>
+    <string name="week">sem</string>
+    <string name="add_review">Valora este sitio y escribe una reseña</string>
+    <string name="review_hint">&#191;Qué te parece este lugar&#63;</string>
+    <string name="message_created">La reseña se he añadido correctamente</string>
+    <string name="message_updated">La reseña se ha actualizado correctamente</string>
+    <string name="message_not_updated">No hemos podido actualizar la reseña, inténtelo de nuevo</string>
+    <string name="message_deleted">La reseña se ha eliminado correctamente</string>
+    <string name="delete_message_title">Borrar Reseña</string>
+    <string name="delete_message_ask">La reseña se borrará permanentemente, &#191;Quieres continuar&#63;</string>
+    <string name="add_one">&#43;1 añadido</string>
+    <string name="remove_one">&#43;1 sustraído</string>
+    <string name="write_review">Escribe una reseña de este %s</string>
+    <string name="login_requiremente_message">Tienes que estar registrado para acceder a estas opciones,
+    &#191;Quieres registrarte ahora&#63;</string>
+
+    <!-- REPORT -->
+    <string name="report_title">&#191;Qué quieres denunciar&#63;</string>
+    <string name="report_spam">Spam</string>
+    <string name="report_violent">Violento o peligroso</string>
+    <string name="report_hate">Incitación al odio, acoso o intimidación</string>
+    <string name="report_wrong_content">Información incorrecta</string>
+    <string name="report_something_else">Otro problema</string>
+    <string name="report_extra_info_title">Información extra</string>
+    <string name="report_extra_info_message">Por favor, escribe una breve descripción del problema</string>
+    <string name="report_email_sent">El informe se ha enviado correctamente. Gracias por tu colaboración</string>
+    <string name="report_email_error_sent">Ha surgido un problema. El informe no se ha podido enviar. Inténtalo más tarde, por favor</string>
+    <string name="report_no_problem_message">Selecciona un problema de la lista e inténtalo de nuevo</string>
+
+    <!-- NOTIFICATIONS -->
+    <string name="no_closest_sites">Lo sentimos pero no hay ningún sitio de interés cerca de ti</string>
+    <string name="server_conexion_cancelled">Se ha perdido la conexión con el servidor</string>
+    <string name="no_item_in_my_items">Aún no has añadido ningún %1$s a esta lista</string>
+    <string name="signing_message">Lo sentimos, pero en esta versión no está disponible el registro de usuarios</string>
+
+    <!-- PERMISSIONS -->
+    <string name="gps_permission_request"><b>World Tourist</b> necesita conocer tu <b>ubicación actual</b> para poder
+    mostrarte los sitios de interés que hay cerca de ti.</string>
+    <string name="permission_denied"><b>World Tourist</b> no podrá mostrarte los eventos y sitios de interés que hay cerca de ti.</string>
+    <string name="provider_disable">El servicio de ubicación está desactivado, &#191;Te gustaría activarlo&#63;</string>
+    <string name="internet_disconnected">Para utilizar World Tourist necesitas tener acceso a Internet, &#191;Te gustaría activarlo ahora&#63;</string>
+    <string name="error_connection">Error de conexión</string>
+    <string name="camera_permission_request"><b>World Tourist</b> necesita acceder a la cámara para mostrarte los sitios de interés que hay cerca de ti</string>
+    <string name="audio_permission_request">Si quieres realizar búsquedas por voz tienes que conceder a <b>World Tourist</b> el permiso de grabación de audio.</string>
+    <string name="audio_permission_denied"><b>World Tourist</b> no podrá buscar los sitios por voz</string>
+    <string name="sensor_not_available">Tu dispositivo no tiene los sensores necesarios para utilizar esta función</string>
+
+    <!-- TEXT_TO_SPEECH -->
+    <string name="tts_start_search">&#191;Qué quieres buscar&#63;</string>
+    <string name="tts_error_no_match">Lo siento, pero no te he entendido bien. Inténtalo de nuevo</string>
+    <string name="tts_ready">Habla ahora</string>
+
+
+    <!-- MENUS -->
+    <string name="menu_configuration">Configuración</string>
+    <string name="menu_preferences">Ajustes</string>
+    <string name="menu_about">Acerca de&#8230;</string>
+    <string name="menu_signing">Registrarse</string>
+    <string name="menu_my_sites">Mis Sitios</string>
+    <string name="menu_my_events">Mis Eventos</string>
+    <string name="menu_sites">Sitios</string>
+    <string name="menu_events">Eventos</string>
+    <string name="menu_site">Sitio</string>
+    <string name="menu_event">Evento</string>
+    <string name="menu_favourite_items">Mis %s favoritos</string>
+    <string name="menu_items_to_visit">%s para visitar</string>
+    <string name="menu_favourite">Favoritos</string>
+    <string name="menu_to_visit">Qué Visitar</string>
+    <string name="menu_share">Compartir</string>
+    <string name="send_to">Enviar</string>
+    <string name="menu_filter">Filtro</string>
+    <string name="menu_message_write">Añade una reseña</string>
+    <string name="menu_message_likes">Añade +1</string>
+    <string name="menu_message_no_likes">Elimina +1</string>
+    <string name="menu_message_report">Informar sobre una reseña</string>
+    <string name="menu_message_edit">Editar reseña</string>
+    <string name="menu_message_delete">Borrar reseña</string>
+    <string name="menu_publish_message">Publicar</string>
+    <string name="menu_ar_geolocation">Realidad Aumentada</string>
+    <string name="menu_ar_how_to_get">&#191;Cómo llegar&#63;</string>
+    <string name="menu_ar_open_detail">Más información</string>
+    <string name="menu_sign_out">Cerrar Sesión</string>
+    <string name="menu_sign_in">Iniciar Sesión</string>
+    <string name="menu_all">Todos</string>
+    <string name="menu_delete">Borrar</string>
+
+    <!-- PREFERENCES -->
+    <string name="prf_distance">Distancia</string>
+    <string name="prf_site_type">¿Qué quieres ver?</string>
+    <string name="prf_warming">Atención</string>
+    <string name="prf_no_type_selected_warming">Si no seleccionas ninguna categoría, World Tourist no podrá mostrarte ni los sitios de interés que haya cerca de ti,
+        ni los eventos que tengan lugar en los próximos días.</string>
+    <string name="prf_no_type_selected">Aún no has seleccionado ninguna categoría.</string>
+    <string name="prf_site_type_new_summary_start">World Tourist te mostrará los <b>sitios</b> y <b>eventos</b> de las siguientes categorías:</string>
+    <string name="prf_event">EVENTOS</string>
+    <string name="prf_tour">VISITA GUIADA</string>
+    <string name="prf_events_and_visits">VISITAS Y EVENTOS</string>
+
+    <!-- MEASURES -->
+    <string name="meters">m</string>
+    <string name="kilometers">km</string>
+
+
+</resources>

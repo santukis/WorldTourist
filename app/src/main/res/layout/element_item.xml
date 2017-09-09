@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/cardview_margin"
+    card_view:cardCornerRadius="@dimen/cardview_radius"
+    card_view:cardElevation="@dimen/cardview_default_elevation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_size"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            tools:src="@android:drawable/ic_menu_report_image"/>
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/icon_size"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/item_image"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_toStartOf="@+id/item_icon"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            tools:text="Concierto Banda de Música de la ciudad de Oviedo" />
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/item_image"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            tools:src="@drawable/ic_culture" />
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_name"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:stretchColumns="0">
+
+            <TableRow
+                android:layout_marginBottom="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/item_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="@dimen/text_margin"
+                    android:drawableLeft="@drawable/ic_virtual_map"
+                    android:drawableStart="@drawable/ic_virtual_map"
+                    tools:drawableTint="@android:color/darker_gray"
+                    tools:text="Oviedo"/>
+
+                <TextView
+                    android:id="@+id/item_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:drawableLeft="@drawable/ic_distance"
+                    android:drawableStart="@drawable/ic_distance"
+                    android:drawablePadding="@dimen/text_margin"
+                    android:gravity="center_vertical"
+                    tools:text="12 metros" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/date_row">
+
+                <TextView
+                    android:id="@+id/item_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:drawablePadding="@dimen/text_margin"
+                    android:drawableLeft="@drawable/ic_item_date"
+                    android:drawableStart="@drawable/ic_item_date"
+                    tools:drawableTint="@android:color/darker_gray"
+                    android:gravity="center_vertical"
+                    tools:text="13/11/2012" />
+
+                <TextView
+                    android:id="@+id/item_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:drawablePadding="@dimen/text_margin"
+                    android:drawableLeft="@drawable/ic_item_time"
+                    android:drawableStart="@drawable/ic_item_time"
+                    tools:drawableTint="@android:color/darker_gray"
+                    android:gravity="center_vertical"
+                    tools:text="11:30 h" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

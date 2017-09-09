@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextureView
+        android:id="@+id/camera_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.david.arlocation.view.views.IconsView
+        android:id="@+id/aritems_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.david.arlocation.view.views.RadarView
+        android:id="@+id/radar_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"/>
+
+</android.support.design.widget.CoordinatorLayout>

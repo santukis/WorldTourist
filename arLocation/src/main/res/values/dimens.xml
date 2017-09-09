@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Radar -->
+    <dimen name="radar_padding">5dp</dimen>
+    <dimen name="radar_radius">55dp</dimen>
+    <dimen name="radar_point_radius">3dp</dimen>
+
+    <!-- Icons -->
+    <dimen name="icons_text_title">18sp</dimen>
+</resources>

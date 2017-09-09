@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_directions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:visibility="gone"
+            app:useCompatPadding="true"
+            app:srcCompat="@drawable/ic_directions"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabSize="normal" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_driving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/fab_directions"
+            android:visibility="gone"
+            app:useCompatPadding="true"
+            app:srcCompat="@drawable/ic_driving"
+            app:fabSize="mini"
+            app:backgroundTint="@color/colorPrimary" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_walking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/fab_directions"
+            android:layout_above="@id/fab_driving"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            app:useCompatPadding="true"
+            app:srcCompat="@drawable/ic_walking"
+            app:backgroundTint="@color/colorAccent"
+            app:fabSize="mini" />
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/element_bottom_sheet_route"/>
+
+</android.support.design.widget.CoordinatorLayout>
