@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="com.david.arlocation.view.views.RadarView">
+
+        <attr name="dotColor" format="color"/>
+        <attr name="radarBackgroundColor" format="color"/>
+        <attr name="radarInnerLinesColor" format="color"/>
+        <attr name="radarBoundaryLinesColor" format="color"/>
+
+        <attr name="radarRadius" format="dimension"/>
+        <attr name="dotRadius" format="dimension"/>
+
+    </declare-styleable>
+
+</resources>

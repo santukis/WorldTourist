@@ -26,10 +26,16 @@ import java.util.Set;
 
 public class RadarView<T extends ArItem> extends View implements ArView<T> {
 
-    private final int RADAR_RADIUS = getResources().getDimensionPixelSize(R.dimen.radar_radius);
-    private final int POINT_RADIUS = getResources().getDimensionPixelSize(R.dimen.radar_point_radius);
-    private final int PADDING = getResources().getDimensionPixelSize(R.dimen.radar_padding);
-    private final int CENTER = RADAR_RADIUS + PADDING;
+    private static final String NAMESPACE = "com.david.arlocation.view.views.RadarView";
+
+    private int RADAR_RADIUS = getResources().getDimensionPixelSize(R.dimen.radar_radius);
+    private int DOT_RADIUS = getResources().getDimensionPixelSize(R.dimen.radar_point_radius);
+    private int RADAR_BACKGROUND_COLOR = R.color.colorRadar;
+    private int RADAR_INNER_LINES_COLOR = R.color.colorRadarLines;
+    private int RADAR_BOUNDARY_LINES_COLOR = R.color.colorPrimary;
+    private int DOT_COLOR = R.color.colorAccent;
+    private int PADDING = getResources().getDimensionPixelSize(R.dimen.radar_padding);
+    private int CENTER = RADAR_RADIUS + PADDING;
 
     private Set<Marker<T>> markers = new HashSet<>();
 
@@ -42,6 +48,21 @@ public class RadarView<T extends ArItem> extends View implements ArView<T> {
 
     public RadarView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
+        if(attrs != null) {
+            RADAR_RADIUS = attrs.getAttributeResourceValue(
+                    NAMESPACE, "radarRadius", getResources().getDimensionPixelSize(R.dimen.radar_radius));
+            DOT_RADIUS = attrs.getAttributeResourceValue(
+                    NAMESPACE, "dotRadius", getResources().getDimensionPixelSize(R.dimen.radar_point_radius));
+            RADAR_BACKGROUND_COLOR = attrs.getAttributeResourceValue(
+                    NAMESPACE, "radarBackgroundColor", R.color.colorRadar);
+            RADAR_INNER_LINES_COLOR = attrs.getAttributeResourceValue(
+                    NAMESPACE, "radarInnerLinesColor", R.color.colorRadarLines);
+            RADAR_BOUNDARY_LINES_COLOR = attrs.getAttributeResourceValue(
+                    NAMESPACE, "radarBoundaryLinesColor", R.color.colorPrimary);
+            DOT_COLOR = attrs.getAttributeResourceValue(
+                    NAMESPACE, "dotColor", R.color.colorPrimary);
+        }
     }
 
     @Override
@@ -85,20 +106,20 @@ public class RadarView<T extends ArItem> extends View implements ArView<T> {
             return;
         }
         drawRadar(canvas);
-        drawRadarPoints(canvas);
+        drawRadarDots(canvas);
     }
 
     private void drawRadar(Canvas canvas) {
 
         //Radar Fill
         radarPaint.setStyle(Paint.Style.FILL);
-        radarPaint.setColor(ContextCompat.getColor(getContext(), R.color.colorRadar));
+        radarPaint.setColor(ContextCompat.getColor(getContext(), RADAR_BACKGROUND_COLOR));
         canvas.drawCircle(CENTER, CENTER, RADAR_RADIUS, radarPaint);
 
         //Radar Concentric Circumferences
         radarPaint.setStyle(Paint.Style.STROKE);
         radarPaint.setStrokeWidth(2);
-        radarPaint.setColor(ContextCompat.getColor(getContext(), R.color.colorRadarLines));
+        radarPaint.setColor(ContextCompat.getColor(getContext(), RADAR_INNER_LINES_COLOR));
         canvas.drawCircle(CENTER, CENTER, RADAR_RADIUS - 20, radarPaint);
         canvas.drawCircle(CENTER, CENTER, RADAR_RADIUS - 40, radarPaint);
 
@@ -107,7 +128,7 @@ public class RadarView<T extends ArItem> extends View implements ArView<T> {
         canvas.drawLine(CENTER - RADAR_RADIUS, CENTER, CENTER + RADAR_RADIUS, CENTER, radarPaint);
 
         //Radar User View
-        radarPaint.setColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
+        radarPaint.setColor(ContextCompat.getColor(getContext(), RADAR_BOUNDARY_LINES_COLOR));
         radarPaint.setStrokeWidth(3);
         canvas.drawLine(
                 CENTER,
@@ -128,10 +149,10 @@ public class RadarView<T extends ArItem> extends View implements ArView<T> {
 
     }
 
-    private void drawRadarPoints(Canvas canvas) {
+    private void drawRadarDots(Canvas canvas) {
 
         circlePaint.setStyle(Paint.Style.FILL);
-        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.colorPrimary));
+        circlePaint.setColor(ContextCompat.getColor(getContext(), DOT_COLOR));
 
         double maxDistance = getMaxDistance();
 
@@ -162,7 +183,7 @@ public class RadarView<T extends ArItem> extends View implements ArView<T> {
             canvas.drawCircle(
                     CENTER - (float) (x * Math.cos(Math.abs(arc))),
                     CENTER + (float) (y * Math.sin(Math.abs(arc))),
-                    POINT_RADIUS,
+                    DOT_RADIUS,
                     circlePaint);
         }
     }

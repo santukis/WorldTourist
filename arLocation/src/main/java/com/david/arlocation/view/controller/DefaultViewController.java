@@ -1,4 +1,4 @@
-package com.david.arlocation.view.manager;
+package com.david.arlocation.view.controller;
 
 
 import android.content.Context;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DefaultViewManager<T extends ArItem> implements ArViewManager<T> {
+public class DefaultViewController<T extends ArItem> implements ArViewManager<T> {
 
     private MarkerRenderer<T> markerRenderer;
 
@@ -28,9 +28,9 @@ public class DefaultViewManager<T extends ArItem> implements ArViewManager<T> {
 
     private Set<Marker<T>> markers = new HashSet<>();
 
-    public DefaultViewManager(@NonNull Context context,
-                              @NonNull ArView<T> iconsView,
-                              @NonNull ArView<T> radarView) {
+    public DefaultViewController(@NonNull Context context,
+                                 @NonNull ArView<T> iconsView,
+                                 @NonNull ArView<T> radarView) {
         this.iconsView = iconsView;
         this.radarView = radarView;
         this.markerRenderer = new DefaultMarkerRenderer<>(context);

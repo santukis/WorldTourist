@@ -1,4 +1,4 @@
-package com.david.arlocation.cluster.manager;
+package com.david.arlocation.cluster.controller;
 
 import android.os.AsyncTask;
 
@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 
-public class DefaultClusterManager<T extends ArItem> implements ClusterManager<T> {
+public class DefaultClusterController<T extends ArItem> implements ClusterManager<T> {
 
     private float CLUSTER_SIDE = 2.5f;
 
@@ -26,7 +26,7 @@ public class DefaultClusterManager<T extends ArItem> implements ClusterManager<T
 
     private Collection<T> arItems = Collections.EMPTY_LIST;
 
-    public DefaultClusterManager() {
+    public DefaultClusterController() {
 
     }
 

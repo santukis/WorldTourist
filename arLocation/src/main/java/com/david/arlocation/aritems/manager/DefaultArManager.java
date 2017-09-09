@@ -15,13 +15,13 @@ import com.david.arlocation.camera.boundary.CameraController;
 import com.david.arlocation.camera.controller.DefaultCameraController;
 import com.david.arlocation.cluster.model.Cluster;
 import com.david.arlocation.cluster.boundary.ClusterManager;
-import com.david.arlocation.cluster.manager.DefaultClusterManager;
+import com.david.arlocation.cluster.controller.DefaultClusterController;
 import com.david.arlocation.view.boundary.ArViewManager;
 import com.david.arlocation.sensors.services.LocationService;
 import com.david.arlocation.sensors.services.OrientationService;
 import com.david.arlocation.view.components.OnArItemClickListener;
 import com.david.arlocation.view.components.OnClusterClickListener;
-import com.david.arlocation.view.manager.DefaultViewManager;
+import com.david.arlocation.view.controller.DefaultViewController;
 import com.david.arlocation.view.model.MarkerRenderer;
 import com.david.arlocation.sensors.boundary.SensorController;
 import com.david.arlocation.sensors.controller.DefaultSensorController;
@@ -52,8 +52,8 @@ public class DefaultArManager<T extends ArItem> implements ArManager<T>, SensorL
         this.cameraController = new DefaultCameraController(context, this, textureView);
         this.orientationController = new DefaultSensorController(context);
         this.locationController = new DefaultSensorController(context);
-        this.clusterManager = new DefaultClusterManager<>();
-        this.viewManager = new DefaultViewManager<>(context, iconsView, radarView);
+        this.clusterManager = new DefaultClusterController<>();
+        this.viewManager = new DefaultViewController<>(context, iconsView, radarView);
     }
 
     @Override
@@ -73,9 +73,9 @@ public class DefaultArManager<T extends ArItem> implements ArManager<T>, SensorL
 
     @Override
     public void init() {
-        cameraController.connectCamera();
         orientationController.connectSensor(this, OrientationService.class);
         locationController.connectSensor(this, LocationService.class);
+        cameraController.connectCamera();
     }
 
     @Override
