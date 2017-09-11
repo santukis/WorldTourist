@@ -587,7 +587,7 @@ public class ItemsMapFragment extends PermissionFragment implements ItemsMapView
         presenter.refreshRoute((Route) polyline.getTag());
     }
 
-    /////////////ClusterManager.OnClusterClickListener implementation//////////////////
+    /////////////ClusterController.OnClusterClickListener implementation//////////////////
     @Override
     public boolean onClusterClick(Cluster<GItem> cluster) {
         if(isMaxZoomReached()) {
@@ -630,7 +630,7 @@ public class ItemsMapFragment extends PermissionFragment implements ItemsMapView
 
     }
 
-    /////////////ClusterManager.OnClusterItemClickListener implementation//////////////
+    /////////////ClusterController.OnClusterItemClickListener implementation//////////////
     @Override
     public boolean onClusterItemClick(GItem gItem) {
         selectedMarker = gItem;
@@ -638,7 +638,7 @@ public class ItemsMapFragment extends PermissionFragment implements ItemsMapView
         return false;
     }
 
-    //////////ClusterManager.OnClusterItemInfoWindowClickListener implementation////////
+    //////////ClusterController.OnClusterItemInfoWindowClickListener implementation////////
     @Override
     public void onClusterItemInfoWindowClick(GItem gItem) {
         if(gItem != null) {

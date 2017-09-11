@@ -1,5 +1,6 @@
 package com.david.worldtourist.aritems.presentation.presenter;
 
+import android.Manifest;
 import android.support.annotation.NonNull;
 
 import com.david.worldtourist.aritems.presentation.boundary.ArItemsPresenter;
@@ -24,6 +25,7 @@ import com.david.worldtourist.permissions.domain.usecase.RequestPermission;
 import com.david.worldtourist.preferences.domain.usecase.GetCoordinates;
 import com.david.worldtourist.preferences.domain.usecase.GetDistance;
 import com.david.worldtourist.preferences.domain.usecase.GetItemTypes;
+import com.david.worldtourist.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +91,14 @@ public class ArItemsPresenterImp extends CachedPresenterImp<ArItemsView> impleme
     @Override
     public void onStart() {
         getDistance.execute(new GetDistance.RequestValues(getItemCategory.executeSync().getItemCategory()));
+
+        checkPermissions(
+                new String[] {
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.ACCESS_FINE_LOCATION},
+                new int[] {
+                        Constants.CAMERA_REQUEST_CODE,
+                        Constants.FINE_LOCATION_REQUEST_CODE});
     }
 
     @Override
@@ -108,8 +118,6 @@ public class ArItemsPresenterImp extends CachedPresenterImp<ArItemsView> impleme
 
     /////////////////////////ItemsPresenter implementation////////////////////////////
 
-
-    @Override
     public void checkPermissions(final String[] permissions, final int[] requestCodes) {
 
         for(int i = 0; i < permissions.length; i++) {

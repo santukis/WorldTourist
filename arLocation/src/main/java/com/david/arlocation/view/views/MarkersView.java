@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class IconsView<T extends ArItem> extends View implements ArView<T> {
+public class MarkersView<T extends ArItem> extends View implements ArView<T> {
 
     private static final int ONE_KILOMETER = 1000;
 
@@ -39,7 +39,7 @@ public class IconsView<T extends ArItem> extends View implements ArView<T> {
 
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    public IconsView(Context context) {
+    public MarkersView(Context context) {
         super(context);
         onClusterClickListener = new EmptyClickAction();
         onArItemClickListener = new EmptyClickAction();
@@ -47,7 +47,7 @@ public class IconsView<T extends ArItem> extends View implements ArView<T> {
         setupPaint();
     }
 
-    public IconsView(Context context, @Nullable AttributeSet attrs) {
+    public MarkersView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         setupPaint();
     }

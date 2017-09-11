@@ -25,7 +25,7 @@ public class DefaultMarkerRenderer<T extends ArItem> implements MarkerRenderer<T
     }
 
     @Override
-    public void onBeforeItemMarkerRenderer(T item, MarkerOptions markerOptions) {
+    public void onBeforeArItemMarkerRenderer(T item, MarkerOptions markerOptions) {
         markerOptions.withIcon(defaultIcon);
     }
 

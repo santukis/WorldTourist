@@ -13,10 +13,10 @@ import com.david.arlocation.aritems.model.GeoLocation;
 import com.david.arlocation.aritems.boundary.ArManager;
 import com.david.arlocation.camera.boundary.CameraController;
 import com.david.arlocation.camera.controller.DefaultCameraController;
+import com.david.arlocation.cluster.boundary.ClusterController;
 import com.david.arlocation.cluster.model.Cluster;
-import com.david.arlocation.cluster.boundary.ClusterManager;
 import com.david.arlocation.cluster.controller.DefaultClusterController;
-import com.david.arlocation.view.boundary.ArViewManager;
+import com.david.arlocation.view.boundary.ArViewController;
 import com.david.arlocation.sensors.services.LocationService;
 import com.david.arlocation.sensors.services.OrientationService;
 import com.david.arlocation.view.components.OnArItemClickListener;
@@ -26,7 +26,7 @@ import com.david.arlocation.view.model.MarkerRenderer;
 import com.david.arlocation.sensors.boundary.SensorController;
 import com.david.arlocation.sensors.controller.DefaultSensorController;
 import com.david.arlocation.sensors.services.SensorListener;
-import com.david.arlocation.view.views.IconsView;
+import com.david.arlocation.view.views.MarkersView;
 import com.david.arlocation.view.views.RadarView;
 
 import java.util.Collection;
@@ -40,35 +40,35 @@ public class DefaultArManager<T extends ArItem> implements ArManager<T>, SensorL
     private CameraController cameraController;
     private SensorController orientationController;
     private SensorController locationController;
-    private ClusterManager<T> clusterManager;
-    private ArViewManager<T> viewManager;
+    private ClusterController<T> clusterController;
+    private ArViewController<T> viewController;
 
     public DefaultArManager(@NonNull Context context,
                             @NonNull TextureView textureView,
-                            @NonNull IconsView<T> iconsView,
+                            @NonNull MarkersView<T> markersView,
                             @NonNull RadarView<T> radarView) {
 
         this.context = context;
         this.cameraController = new DefaultCameraController(context, this, textureView);
         this.orientationController = new DefaultSensorController(context);
         this.locationController = new DefaultSensorController(context);
-        this.clusterManager = new DefaultClusterController<>();
-        this.viewManager = new DefaultViewController<>(context, iconsView, radarView);
+        this.clusterController = new DefaultClusterController<>();
+        this.viewController = new DefaultViewController<>(context, markersView, radarView);
     }
 
     @Override
     public void setMarkerRenderer(@NonNull MarkerRenderer<T> markerRenderer) {
-        viewManager.setMarkerRenderer(markerRenderer);
+        viewController.setMarkerRenderer(markerRenderer);
     }
 
     @Override
     public void setOnClusterClickListener(OnClusterClickListener<T> listener) {
-        viewManager.setOnClusterClickListener(listener);
+        viewController.setOnClusterClickListener(listener);
     }
 
     @Override
     public void setOnArItemClickListener(OnArItemClickListener<T> listener) {
-        viewManager.setOnArItemClickListener(listener);
+        viewController.setOnArItemClickListener(listener);
     }
 
     @Override
@@ -81,11 +81,11 @@ public class DefaultArManager<T extends ArItem> implements ArManager<T>, SensorL
     @Override
     public void addArItems(Collection<T> arItems) {
 
-        clusterManager.createClusters(arItems, new ClusterManager.OnClustered<T>() {
+        clusterController.createClusters(arItems, new ClusterController.OnClustered<T>() {
             @Override
             public void onSuccess(Set<? extends Cluster<T>> clusters) {
-                viewManager.clearMarkers();
-                viewManager.createMarkers(clusters);
+                viewController.clearMarkers();
+                viewController.createMarkers(clusters);
             }
         });
     }
@@ -103,19 +103,19 @@ public class DefaultArManager<T extends ArItem> implements ArManager<T>, SensorL
         switch (sensorId) {
 
             case LOCATION_SENSOR:
-                clusterManager.setCurrentLocation((GeoLocation) data);
-                clusterManager.updateClusters(new ClusterManager.OnClustered<T>() {
+                clusterController.setCurrentLocation((GeoLocation) data);
+                clusterController.updateClusters(new ClusterController.OnClustered<T>() {
                     @Override
                     public void onSuccess(Set<? extends Cluster<T>> clusters) {
-                        viewManager.clearMarkers();
-                        viewManager.createMarkers(clusters);
+                        viewController.clearMarkers();
+                        viewController.createMarkers(clusters);
                     }
                 });
                 break;
 
             case ORIENTATION_SENSOR:
-                clusterManager.setRotationMatrix((float[]) data);
-                viewManager.updateMarkersPosition();
+                clusterController.setRotationMatrix((float[]) data);
+                viewController.updateMarkersPosition();
                 break;
         }
     }
@@ -125,7 +125,11 @@ public class DefaultArManager<T extends ArItem> implements ArManager<T>, SensorL
         switch (sensorId) {
             case LOCATION_SENSOR:
             case ORIENTATION_SENSOR:
-                Toast.makeText(context, R.string.sensor_not_available, Toast.LENGTH_LONG).show();
+                Toast.makeText(
+                        context,
+                        R.string.sensor_not_available,
+                        Toast.LENGTH_LONG)
+                        .show();
 
                 try{
                     ((Activity) context).getFragmentManager().popBackStackImmediate();
@@ -140,7 +144,7 @@ public class DefaultArManager<T extends ArItem> implements ArManager<T>, SensorL
     @Override
     public void update(Observable o, Object arg) {
         if(arg instanceof float[]) {
-            clusterManager.setCameraProjectionMatrix((float[]) arg);
+            clusterController.setCameraProjectionMatrix((float[]) arg);
         }
     }
 }

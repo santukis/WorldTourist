@@ -46,13 +46,15 @@ public class DefaultCameraController extends Observable implements CameraControl
                     return;
                 }
 
-                int degrees = 270;
-                if (orientation < 45 || orientation > 315)
+                int degrees = 90;
+
+                if(orientation > 315 || orientation < 45) {
                     degrees = 0;
-                else if (orientation < 135)
-                    degrees = 90;
-                else if (orientation < 225)
+                } else if(orientation < 135) {
+                    degrees = 270;
+                } else if(orientation < 225) {
                     degrees = 180;
+                }
 
                 setCameraOrientation(degrees);
             }

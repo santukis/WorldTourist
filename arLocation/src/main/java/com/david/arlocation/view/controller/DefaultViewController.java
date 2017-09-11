@@ -5,7 +5,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.david.arlocation.aritems.model.ArItem;
-import com.david.arlocation.view.boundary.ArViewManager;
+import com.david.arlocation.view.boundary.ArViewController;
 import com.david.arlocation.view.model.DefaultMarkerRenderer;
 import com.david.arlocation.view.model.Marker;
 import com.david.arlocation.view.model.MarkerOptions;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DefaultViewController<T extends ArItem> implements ArViewManager<T> {
+public class DefaultViewController<T extends ArItem> implements ArViewController<T> {
 
     private MarkerRenderer<T> markerRenderer;
 
@@ -74,7 +74,7 @@ public class DefaultViewController<T extends ArItem> implements ArViewManager<T>
 
         if (markerSize == ONE_ITEM) {
             T item = new ArrayList<>(marker.getItems()).get(FIRST_ONE);
-            markerRenderer.onBeforeItemMarkerRenderer(item, markerOptions);
+            markerRenderer.onBeforeArItemMarkerRenderer(item, markerOptions);
 
         } else {
             markerRenderer.onBeforeClusterMarkerRenderer(marker.getCluster(), markerOptions);

@@ -7,7 +7,5 @@ import com.david.worldtourist.items.domain.model.LoadingState;
 
 public interface ArItemsPresenter<T extends BaseView> extends CachedPresenter<T> {
 
-    void checkPermissions(final String[] permissions, final int[] requestCodes);
-
     void loadArItems(LoadingState loadingState);
 }

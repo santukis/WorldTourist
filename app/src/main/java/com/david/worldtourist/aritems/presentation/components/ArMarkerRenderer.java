@@ -16,17 +16,17 @@ import com.david.arlocation.view.model.MarkerRenderer;
 import com.david.worldtourist.items.domain.model.Item;
 import com.david.worldtourist.items.domain.model.ItemType;
 
-public class ArClusterRenderer implements MarkerRenderer<AItem> {
+public class ArMarkerRenderer implements MarkerRenderer<AItem> {
 
 
     private Context context;
 
-    public ArClusterRenderer(Context context) {
+    public ArMarkerRenderer(Context context) {
         this.context = context;
     }
 
     @Override
-    public void onBeforeItemMarkerRenderer(AItem arItem, MarkerOptions markerOptions) {
+    public void onBeforeArItemMarkerRenderer(AItem arItem, MarkerOptions markerOptions) {
         Item item = arItem.getItem();
 
         markerOptions.withIcon(getDrawable(item.getType().getIcon()));

@@ -7,7 +7,7 @@ import com.david.arlocation.cluster.model.Cluster;
 import java.util.Set;
 
 
-public interface ArViewManager<T extends ArItem> extends ConfigManager<T> {
+public interface ArViewController<T extends ArItem> extends ConfigManager<T> {
 
     void createMarkers(Set<? extends Cluster<T>> clusters);
 

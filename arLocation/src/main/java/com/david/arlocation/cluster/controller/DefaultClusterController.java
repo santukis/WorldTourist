@@ -4,10 +4,10 @@ import android.os.AsyncTask;
 
 import com.david.arlocation.aritems.model.ArItem;
 import com.david.arlocation.aritems.model.GeoLocation;
+import com.david.arlocation.cluster.boundary.ClusterController;
 import com.david.arlocation.cluster.model.CameraPosition;
 import com.david.arlocation.cluster.model.Cluster;
 import com.david.arlocation.cluster.model.Location;
-import com.david.arlocation.cluster.boundary.ClusterManager;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -16,15 +16,15 @@ import java.util.Iterator;
 import java.util.Set;
 
 
-public class DefaultClusterController<T extends ArItem> implements ClusterManager<T> {
+public class DefaultClusterController<T extends ArItem> implements ClusterController<T> {
 
     private float CLUSTER_SIDE = 2.5f;
 
+    private float[] cameraMatrix;
+    private float[] rotationMatrix;
     private GeoLocation currentGeoLocation = GeoLocation.EMPTY_COORDINATE;
-    private float[] cameraMatrix = new float[16];
-    private float[] rotationMatrix = new float[16];
 
-    private Collection<T> arItems = Collections.EMPTY_LIST;
+    private Collection<T> arItems;
 
     public DefaultClusterController() {
 
@@ -48,15 +48,13 @@ public class DefaultClusterController<T extends ArItem> implements ClusterManage
     @Override
     public void createClusters(final Collection<T> items, OnClustered<T> callback) {
         arItems = items;
+        new ClusterItems(callback).execute(arItems);
 
-        if(currentGeoLocation != GeoLocation.EMPTY_COORDINATE) {
-            new ClusterItems(callback).execute(arItems);
-        }
     }
 
     @Override
     public void updateClusters(OnClustered<T> callback) {
-        if(!arItems.isEmpty()) {
+        if(arItems != null && !arItems.isEmpty()) {
             new ClusterItems(callback).execute(arItems);
         }
     }
@@ -72,6 +70,17 @@ public class DefaultClusterController<T extends ArItem> implements ClusterManage
         @Override
         protected Set<? extends Cluster<T>> doInBackground(Collection<T>... params) {
             Collection<T> items = params[0];
+
+            while(currentGeoLocation == GeoLocation.EMPTY_COORDINATE ||
+                    cameraMatrix == null || rotationMatrix == null) {
+
+                try{
+                    Thread.sleep(500);
+
+                }catch (InterruptedException exception) {
+                    return new HashSet<>();
+                }
+            }
 
             return createClusters(items);
         }
@@ -95,7 +104,7 @@ public class DefaultClusterController<T extends ArItem> implements ClusterManage
                 T nextItem = iterator2.next();
                 CameraPosition nextPosition = getCameraPosition(nextItem);
 
-                if (isItemOverlapped(currentPosition, nextPosition)) {
+                if (areItemsOverlapped(currentPosition, nextPosition)) {
                     clusterItems.add(nextItem);
                     iterator2.remove();
                 }
@@ -118,7 +127,7 @@ public class DefaultClusterController<T extends ArItem> implements ClusterManage
                 rotationMatrix);
     }
 
-    private boolean isItemOverlapped(CameraPosition first, CameraPosition second) {
+    private boolean areItemsOverlapped(CameraPosition first, CameraPosition second) {
         float x1 = first.getX() / first.getW();
         float x2 = second.getX() / second.getW();
         float y1 = first.getY() / first.getW();

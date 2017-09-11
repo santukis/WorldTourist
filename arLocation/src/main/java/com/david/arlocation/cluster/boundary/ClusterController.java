@@ -8,7 +8,7 @@ import com.david.arlocation.cluster.model.Cluster;
 import java.util.Collection;
 import java.util.Set;
 
-public interface ClusterManager<T extends ArItem> {
+public interface ClusterController<T extends ArItem> {
 
     void setCurrentLocation(GeoLocation coordinates);
 

@@ -6,7 +6,7 @@ import com.david.arlocation.cluster.model.Cluster;
 
 public interface MarkerRenderer<T extends ArItem> {
 
-    void onBeforeItemMarkerRenderer(T item, MarkerOptions markerOptions);
+    void onBeforeArItemMarkerRenderer(T item, MarkerOptions markerOptions);
 
     void onBeforeClusterMarkerRenderer(Cluster<T> cluster, MarkerOptions markerOptions);
 }

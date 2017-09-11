@@ -1,6 +1,5 @@
 package com.david.worldtourist.aritems.presentation.view;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -21,17 +20,16 @@ import android.widget.TextView;
 
 import com.david.arlocation.aritems.boundary.ArManager;
 import com.david.arlocation.aritems.manager.DefaultArManager;
-import com.david.arlocation.aritems.model.GeoLocation;
 import com.david.arlocation.cluster.model.Cluster;
 import com.david.arlocation.view.components.OnArItemClickListener;
 import com.david.arlocation.view.components.OnClusterClickListener;
-import com.david.arlocation.view.views.IconsView;
+import com.david.arlocation.view.views.MarkersView;
 import com.david.arlocation.view.views.RadarView;
 import com.david.worldtourist.R;
 import com.david.worldtourist.aritems.di.components.ArItemsComponent;
 import com.david.worldtourist.aritems.di.components.DaggerArItemsComponent;
 import com.david.worldtourist.aritems.presentation.boundary.ArItemsPresenter;
-import com.david.worldtourist.aritems.presentation.components.ArClusterRenderer;
+import com.david.worldtourist.aritems.presentation.components.ArMarkerRenderer;
 import com.david.worldtourist.aritems.presentation.components.AItem;
 import com.david.worldtourist.aritems.presentation.boundary.ArItemsView;
 import com.david.worldtourist.aritems.presentation.adapter.ClusterItemAdapter;
@@ -61,7 +59,7 @@ public class ArItemsFragment extends PermissionFragment implements ArItemsView,
     private ArManager<AItem> arManager;
 
     @BindView(R.id.camera_view) TextureView cameraPreview;
-    @BindView(R.id.aritems_overlay) IconsView<AItem> clusterView;
+    @BindView(R.id.aritems_overlay) MarkersView<AItem> clusterView;
     @BindView(R.id.radar_view) RadarView<AItem> radarView;
 
     //////////////////////////////Fragment Lifecycle///////////////////////////////
@@ -99,13 +97,6 @@ public class ArItemsFragment extends PermissionFragment implements ArItemsView,
     public void onStart() {
         super.onStart();
         presenter.onStart();
-        presenter.checkPermissions(
-                new String[] {
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.ACCESS_FINE_LOCATION},
-                new int[] {
-                        Constants.CAMERA_REQUEST_CODE,
-                        Constants.FINE_LOCATION_REQUEST_CODE});
     }
 
     @Override
@@ -157,7 +148,7 @@ public class ArItemsFragment extends PermissionFragment implements ArItemsView,
 
         arManager = new DefaultArManager<>(getActivity(), cameraPreview, clusterView, radarView);
 
-        arManager.setMarkerRenderer(new ArClusterRenderer(getActivity().getApplicationContext()));
+        arManager.setMarkerRenderer(new ArMarkerRenderer(getActivity().getApplicationContext()));
 
     }
 
